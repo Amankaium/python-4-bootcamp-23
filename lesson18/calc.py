@@ -1,10 +1,27 @@
 # from my_lib.operation_class import Operation
 # from my_lib.operation_class import *
+
+'''
+пользователь вводится число, операцию и снова число, 
+программа должна считать и выводить результат
+затем программа снова запросит эти 3 переменные и так
+до тех пор пока не введёт 0
+
+Пример:
+3 # ввод
++ # ввод
+2 # ввод
+5 # вывод
+4 # ввод
+* # ввод
+6 # ввод
+24 # вывод
+0 # ввод
+программа останавливается
+'''
+
 from my_lib import *
 
-n_1 = int(input())
-op_1 = input()
-n_2 = int(input())
 
-op_object = Operation(n_1, op_1, n_2)
-print(op_object.value)
+if __name__ == "__main__":
+    desicion_1 = Decision()
