@@ -74,3 +74,8 @@ class TelegramBot:
 
     def send_photo(self, chat_id, photo_url):
         requests.get(f"{self.url}sendPhoto?chat_id={chat_id}&photo={photo_url}")
+
+    def send_sticker(self, chat_id, sticker_id):
+        response = requests.get(f"{self.url}sendSticker?chat_id={chat_id}&sticker={sticker_id}")
+        print(response.status_code)
+        
