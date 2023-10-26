@@ -27,7 +27,13 @@ while True:
     for message, value in messages.items():
         if value["status"] != "+":
             if value["text"] == "/list":
-                tb.send_message(chat_id, cup_names)
+                markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+                lst = []
+                for number in cup_numbers:
+                    btn = telebot.types.KeyboardButton(number)
+                    lst.append(btn)
+                markup.add(*lst)
+                tb.send_message(chat_id, cup_names, reply_markup=markup)
             elif value["text"] in cup_numbers:
                 cup_info, img_path = excel_object.get_cup_info(value["text"])
                 tb.send_message(chat_id, cup_info)
