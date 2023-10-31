@@ -39,7 +39,7 @@ class ExcelFile:
         for row in page:
             if row[0].row == 1:
                 continue
-            names += f"{row[0].value}. {row[1].value}"
+            names += f"{row[0].value}. {row[1].value}: {row[2].value} сом"
             names += "\n" 
         return names
 
@@ -54,7 +54,7 @@ class ExcelFile:
         for row in page:
             if str(row[0].value) == number: # '2' == '2'
                 cup_info = f'''{row[1].value}
-Цена: {row[2].value} сом''' # Кружка смешался \n Цена: 700 сом 
+Цена: {row[2].value} сом''' # Кружка смешалка \n Цена: 700 сом 
                 img_path = row[3].value # 'img/mixer.jpg'
                 return cup_info, img_path
 
