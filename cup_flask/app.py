@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from excel import ExcelFile
 
 excel_object = ExcelFile("cups.xlsx")
@@ -20,9 +20,8 @@ def contacts():
 @app.route("/cups/")
 def cups_list():
     cup_names = excel_object.get_cup_names()
-    # <br> - перенос строки
-    response_str = cup_names.replace("\n", "<br>")
-    return response_str # тип - строка
+    cup_names = cup_names.split("\n")
+    return render_template("cup_list.html", cup_names=cup_names)
 
 @app.route("/cup/<number>")
 def cup_detail(number):
