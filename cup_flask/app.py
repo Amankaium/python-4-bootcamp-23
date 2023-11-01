@@ -14,8 +14,7 @@ def about():
 
 @app.route("/contacts/")
 def contacts():
-    return """<b> Тел.: </b> 23534534534 <br>
-        <b>email:</b> codify@gmail.com"""
+    return render_template("contacts.html")
 
 @app.route("/cups/")
 def cups_list():
@@ -26,10 +25,6 @@ def cups_list():
 @app.route("/cup/<number>")
 def cup_detail(number):
     cup_info, img_path = excel_object.get_cup_info(number)
-    cup_info = cup_info.replace("\n", "<br>")
-    return f"""{cup_info}
-        <br>
-        <img src='/static/{img_path}'/>
-        """
+    return render_template("cup_detail.html", cup_info=cup_info, img_path=img_path)
 
 app.run()

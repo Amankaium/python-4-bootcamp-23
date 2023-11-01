@@ -12,12 +12,7 @@
         <a href="/about/">О нас</a> |
         <a href="/contacts/">Контакты</a>
     </nav>
-    <div>
-        {% for cup in cup_names %}
-            <div>
-                <a href="/cup/{{ loop.index }}">{{ cup }}</a>
-            </div>
-        {% endfor %}
-    </div>
+    <h2>{{ cup_info }}</h2>
+    <img height="250px" src="/static/{{ img_path }}">
 </body>
 </html>
