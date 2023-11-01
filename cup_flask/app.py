@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return '<a href="https://www.youtube.com/"> Клик сюда! </a>'
+    return render_template("home.html")
 
 @app.route("/about/")
 def about():
-    return "Это сайт для продажи <b> кружек </b>"
+    return render_template("about.html")
 
 @app.route("/contacts/")
 def contacts():
