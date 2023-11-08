@@ -1,0 +1,46 @@
+# создаём папку kgtube
+# устанавливаем django
+pip install django
+pip freeze
+# создание проекта (точка в конце)
+django-admin startproject kgtube .
+python manage.py runserver
+python manage.py startapp core
+
+# kgtube/settings.py 33 строка
+'core', # добавить в список
+
+# kgtube/urls.py 
+from core.views import homepage # 19 строка
+path('', homepage), # добавляем в urlpatterns
+
+# core/views.py создаём функцию homepage
+
+python manage.py startapp video
+# kgtube/settings.py 33 строка
+'video', # добавить в список
+
+# video/models.py
+# добавляем класс (модель, таблица) Video
+
+# kgtube/settings.py, ~ 120 строка
+# добавляем STATIC_ROOT, MEDIA_URL, MEDIA_ROOT
+
+# kgtube/urls.py
+# добавляем пути для STATIC и MEDIA
+
+# синхронизация с БД
+python manage.py makemigrations
+python manage.py migrate
+
+# video/admin.py
+from .models import Video
+admin.site.register(Video)
+
+# создаём админа
+python manage.py createsuperuser
+# прописываем логин и пароль
+
+# в core создаём папку templates
+# и в папку templates добавляем файл home.html
+
