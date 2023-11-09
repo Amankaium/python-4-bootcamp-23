@@ -12,6 +12,10 @@
         <a href="/about/">О нас</a> |
         <a href="/playlists/">Плейлисты</a>
     </nav>
-    Hello from templates
+    <h2>Все плейлисты</h2>
+    {% for object in objects_list %}
+        <div>{{ object.name }}</div>
+    {% endfor %}
+    
 </body>
 </html>

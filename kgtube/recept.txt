@@ -23,15 +23,15 @@ python manage.py startapp video
 # video/models.py
 # добавляем класс (модель, таблица) Video
 
+# синхронизация с БД
+python manage.py makemigrations
+python manage.py migrate
+
 # kgtube/settings.py, ~ 120 строка
 # добавляем STATIC_ROOT, MEDIA_URL, MEDIA_ROOT
 
 # kgtube/urls.py
 # добавляем пути для STATIC и MEDIA
-
-# синхронизация с БД
-python manage.py makemigrations
-python manage.py migrate
 
 # video/admin.py
 from .models import Video
