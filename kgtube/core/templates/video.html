@@ -13,13 +13,9 @@
         <a href="/about/">О нас</a> |
         <a href="/playlists/">Плейлисты</a>
     </nav>
-    <h1>Все видео</h1>
-    {% for video in videos_list %}
-        <div>
-            <a href="/video/{{ video.id }}/">
-                {{ video.name }}
-            </a>
-        </div>
-    {% endfor %}
+    <h1>{{ video.name }}</h1>
+    <h2>Лайков: {{ video.likes }}</h2>
+    <video width="500" controls src="{{ video.file_path.url }}">
+    </video>
 </body>
 </html>
