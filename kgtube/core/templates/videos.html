@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Домой</a> |
+        <a href="/admin">Админ панель</a> |
+        <a href="/about/">О нас</a> |
+        <a href="/playlists/">Плейлисты</a>
+    </nav>
+    <h1>Все видео</h1>
+    {% for video in videos_list %}
+        <div>
+            {{ video.name }}
+        </div>
+    {% endfor %}
+</body>
+</html>

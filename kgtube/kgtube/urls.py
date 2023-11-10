@@ -19,6 +19,7 @@ from django.urls import path
 from core.views import homepage, about_view
 from playlist.views import playlists
 # from playlist import views
+from video.views import videos
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,6 +29,7 @@ urlpatterns = [
     path('about/', about_view),
     path('playlists/', playlists),
     # path('playlists/', views.playlists),
+    path('videos/', videos)
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
